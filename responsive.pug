@@ -1,0 +1,41 @@
+//- https://calendar.perfplanet.com/2016/image-optimization/
+body(style="width:100%;margin:0;")
+  section(style="height:100vh;background-color:lightslategrey;color:white;")
+    p
+  section(style="height:100vh;background-color:lightcoral;")
+  section(style="height:100vh;background-color:lightseagreen;")
+  section(style="width:100%;")
+    picture(style="display:inline-block;width:100%;")
+      source(type="image/webp" media="(min-width: 2560px)" srcset="img/8688-webp-landscape.webp")
+      source(type="image/jpg" media="(min-width: 2560px)" srcset="img/8688-jpg-landscape.jpg")
+      source(type="image/webp" media="(min-width: 1920px)" srcset="img/3240-webp-landscape.webp")
+      source(type="image/jpg" media="(min-width: 1920px)" srcset="img/3240-jpg-landscape.jpg")
+      source(type="image/webp" media="(min-width: 1440px)" srcset="img/1620-webp-landscape.webp")
+      source(type="image/jpg" media="(min-width: 1440px)" srcset="img/1620-jpg-landscape.jpg")
+      source(type="image/webp" media="(min-width: 1024px)" srcset="img/1080-webp-landscape.webp")
+      source(type="image/jpg" media="(min-width: 1024px)" srcset="img/1080-jpg-landscape.jpg")
+      //-source(type="image/webp" media="(min-width: 768px)" srcset="img/800-webp-landscape.webp")
+      //-source(type="image/jpg" media="(min-width: 768px)" srcset="img/800-jpg-landscape.jpg")
+      source(type="image/webp" srcset="img/640-webp-landscape.webp")
+      source(type="image/jpgs" srcset="img/640-jpg-landscape.jpg")
+      img(src="img/dummy.jpg" alt="Alt text" loading="lazy" style="width:100%;")
+  script.
+    if ('loading' in HTMLImageElement.prototype) { 
+      document.querySelector('p').innerHTML = 'Your browser supports native lazy load';
+    } else {
+       document.querySelector('p').innerHTML = 'Your browser does NOT have support for native lazy load';
+    }
+//-
+  @ToDo:
+  - Compress webp images to 80% to reduce size
+  - webp Lossless: whats is that?
+  - Progressicve image loading - SVG?
+  - Add Chrome Lazy load - Funziona, ma non como mi speravo. Per forza deve avere il width e il height come attr nell'HTML
+  - Define real breackpoints and images sizes
+  - 1x & 2x retina display
+  - Fare un essempio con img senza picture
+
+//-
+  https://www.imgix.com/pricing
+  https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization
+  https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/automating-image-optimization/
